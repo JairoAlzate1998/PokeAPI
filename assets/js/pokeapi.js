@@ -16,11 +16,11 @@ const getData = (url) => {
 // Dibujar cards de Pokemons
 const llenarDatos = (data) => {
   let html = "";
-  data.forEach((pj) => {
+  data.forEach((pk) => {
     html += '<div class="col mt-5">';
     html += '<div class="card" style="width: 15rem;">';
     html += '<div class="card-body">';
-    html += `<h5 class="card-title">${pj.name}</h5>`;
+    html += `<h5 class="card-title">${pk.name}</h5>`;
     html += "</div>";
     html += "</div>";
     html += "</div>";
