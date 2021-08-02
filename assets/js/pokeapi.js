@@ -18,11 +18,12 @@ const pokeData = (data) => {
   let html = "";
   document.getElementById("datosPokemons").innerHTML = "";
   data.forEach((pk) => {
+    let name = pk.name;
     const URL = pk.url;
     return fetch(URL)
       .then((response) => response.json())
       .then((json) => {
-        llenarDatos(json, html);
+        llenarDatos(json, html, name);
       })
       .catch((error) => {
         console.log("Error: " + error);
@@ -31,12 +32,12 @@ const pokeData = (data) => {
 };
 
 // Dibujar cards de Pokemons
-const llenarDatos = (data, html) => {
+const llenarDatos = (data, html, name) => {
   html += '<div class="col mt-5">';
   html += '<div class="card" style="width: 15rem;">';
   html += `<img src="${data.sprites.other.dream_world.front_default}" class="card-img-top" alt="${data.name}"></img>`;
   html += '<div class="card-body">';
-  html += `<h5 class="card-title">${data.name}</h5>`;
+  html += `<h5 class="card-title">${name}</h5>`;
   html += `<h5 class="card-title">${data.weight}</h5>`;
   html += `<h5 class="card-title">${data.height}</h5>`;
   html += "</div>";
