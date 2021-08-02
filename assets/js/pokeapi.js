@@ -13,7 +13,7 @@ const getData = (url) => {
     });
 };
 
-// Dibujar cards de personajes
+// Dibujar cards de Pokemons
 const llenarDatos = (data) => {
   let html = "";
   data.forEach((pj) => {
@@ -25,7 +25,7 @@ const llenarDatos = (data) => {
     html += "</div>";
     html += "</div>";
   });
-  document.getElementById("datosPersonajes").innerHTML = html;
+  document.getElementById("datosPokemons").innerHTML = html;
 };
 
 // Paginacion
